@@ -117,4 +117,36 @@ with open(output_path, "w", encoding="utf-8") as f:
     f.write(html_template)
 
 print("✅ Dutch peer HTML 文件已成功保存！路径：", output_path)
+print("⚠️ 脚本开始运行...")
+
+# HTML 模板（略）
+html_template = """
+<!DOCTYPE html>
+<html lang="en">
+<head>...</head>
+<body>...</body>
+</html>
+"""
+
+# ✅ 保存 HTML 文件
+output_path = "/Users/kqin/Downloads/uv-feedback-pages/professional_day1_doctor_feedback_live3.html"
+with open(output_path, "w", encoding="utf-8") as f:
+    f.write(html_template)
+
+print("✅ Doctor HTML 文件已成功保存！路径：", output_path)
+
+# ✅ 自动推送到 GitHub
+import os
+import subprocess
+
+print("🚀 开始同步到 GitHub...")
+os.chdir('/Users/kqin/Downloads/uv-feedback-pages')
+
+try:
+    subprocess.run(['git', 'add', '.'], check=True)
+    subprocess.run(['git', 'commit', '-m', '🤖 自动更新 doctor HTML'], check=True)
+    subprocess.run(['git', 'push', 'origin', 'main'], check=True)
+    print("✅ GitHub 同步成功！")
+except subprocess.CalledProcessError:
+    print("❌ GitHub 推送失败，请检查网络或凭证")
 
