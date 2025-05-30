@@ -122,7 +122,7 @@ import os
 import subprocess
 
 print("🚀 开始同步到 GitHub...")
-os.chdir(“/Users/kqin/Downloads/uv-feedback-pages”)
+os.chdir("/Users/kqin/Downloads/uv-feedback-pages")
 
 try:
     subprocess.run(['git', 'add', '.'], check=True)
