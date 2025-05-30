@@ -117,14 +117,14 @@ output_path = "/Users/kqin/Downloads/uv-feedback-pages/peer_day1_dutch_feedback_
 with open(output_path, "w", encoding="utf-8") as f:
     f.write(html_template)
 
-print("✅ Doctor HTML 文件已成功保存！路径：", output_path)
+print("✅ Dutch HTML 文件已成功保存！路径：", output_path)
 
 # ✅ 自动推送到 GitHub
 print("🚀 开始同步到 GitHub...")
 os.chdir("/Users/kqin/Downloads/uv-feedback-pages")
 try:
     subprocess.run(["git", "add", "."], check=True)
-    subprocess.run(["git", "commit", "-m", "✅ 修复 doctor 页面空白"], check=True)
+    subprocess.run(["git", "commit", "-m", "✅ 修复 Dutch 页面空白"], check=True)
     subprocess.run(["git", "push", "origin", "main"], check=True)
     print("✅ GitHub 同步成功！")
 except subprocess.CalledProcessError:
