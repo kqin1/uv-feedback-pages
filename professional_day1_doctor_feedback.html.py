@@ -1,9 +1,7 @@
 import requests
 import os
 import subprocess
-
 print("⚠️ 脚本开始运行...")
-
 # 获取天气数据
 API_KEY = "9d770d00e9cb32e8bf84fcd9cb6b39fd"
 url = f"https://api.openweathermap.org/data/3.0/onecall?lat=51.4416&lon=5.4697&exclude=minutely,hourly,daily,alerts&units=metric&appid={API_KEY}"
@@ -23,11 +21,13 @@ html_template = f"""<!DOCTYPE html>
             font-family: 'SF Pro Display';
             src: local('SF Pro Display'), local('SFProDisplay-Regular'), sans-serif;
         }}
+        
         body {{
             margin: 0;
-            font-family: sans-serif;
+            font-family: 'SF Pro Display', sans-serif;
             background: #1C1B33;
         }}
+        
         .container {{
             position: relative;
             width: 377px;

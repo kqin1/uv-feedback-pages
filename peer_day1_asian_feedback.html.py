@@ -110,23 +110,6 @@ html_template = f"""<!DOCTYPE html>
 </body>
 </html>"""
 
-# ✅ 保存到下载
-output_path = "/Users/kqin/Downloads/peer_day1_asian_feedback_live3.html"
-with open(output_path, "w", encoding="utf-8") as f:
-    f.write(html_template)
-
-print("✅ Asian peer HTML 文件已成功保存！路径：", output_path)
-print("⚠️ 脚本开始运行...")
-
-# HTML 模板（略）
-html_template = """
-<!DOCTYPE html>
-<html lang="en">
-<head>...</head>
-<body>...</body>
-</html>
-"""
-
 # ✅ 保存 HTML 文件
 output_path = "/Users/kqin/Downloads/uv-feedback-pages/professional_day1_doctor_feedback_live3.html"
 with open(output_path, "w", encoding="utf-8") as f:
@@ -139,7 +122,7 @@ import os
 import subprocess
 
 print("🚀 开始同步到 GitHub...")
-os.chdir('/Users/kqin/Downloads/uv-feedback-pages')
+os.chdir(“/Users/kqin/Downloads/uv-feedback-pages”)
 
 try:
     subprocess.run(['git', 'add', '.'], check=True)
