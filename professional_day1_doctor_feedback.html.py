@@ -117,22 +117,6 @@ with open(output_path, "w", encoding="utf-8") as f:
     f.write(html_template)
 
 print("✅ HTML 文件已成功保存！路径：", output_path)
-print("⚠️ 脚本开始运行...")
-
-# HTML 模板（略）
-html_template = """
-<!DOCTYPE html>
-<html lang="en">
-<head>...</head>
-<body>...</body>
-</html>
-"""
-
-# ✅ 保存 HTML 文件
-output_path = "/Users/kqin/Downloads/uv-feedback-pages/professional_day1_doctor_feedback_live3.html"
-with open(output_path, "w", encoding="utf-8") as f:
-    f.write(html_template)
-
 print("✅ Doctor HTML 文件已成功保存！路径：", output_path)
 
 # ✅ 自动推送到 GitHub
