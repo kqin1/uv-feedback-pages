@@ -1,5 +1,6 @@
 import requests
-
+import os
+import subprocess
 print("⚠️ 脚本开始运行...")
 
 # ✅ 替换为你的 OpenWeather API 密钥
@@ -118,16 +119,12 @@ with open(output_path, "w", encoding="utf-8") as f:
 print("✅ Doctor HTML 文件已成功保存！路径：", output_path)
 
 # ✅ 自动推送到 GitHub
-import os
-import subprocess
-
 print("🚀 开始同步到 GitHub...")
 os.chdir("/Users/kqin/Downloads/uv-feedback-pages")
-
 try:
-    subprocess.run(['git', 'add', '.'], check=True)
-    subprocess.run(['git', 'commit', '-m', '🤖 自动更新 doctor HTML'], check=True)
-    subprocess.run(['git', 'push', 'origin', 'main'], check=True)
+    subprocess.run(["git", "add", "."], check=True)
+    subprocess.run(["git", "commit", "-m", "✅ 修复 doctor 页面空白"], check=True)
+    subprocess.run(["git", "push", "origin", "main"], check=True)
     print("✅ GitHub 同步成功！")
 except subprocess.CalledProcessError:
     print("❌ GitHub 推送失败，请检查网络或凭证")
