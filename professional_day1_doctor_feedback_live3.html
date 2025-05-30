@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <style>
+            @font-face {
+            font-family: 'SF Pro Display';
+            src: local('SF Pro Display'), local('SFProDisplay-Regular'), sans-serif;
+        }
         body {
             margin: 0;
             font-family: sans-serif;
@@ -25,17 +29,36 @@
             color: white;
         }
         .weather-info h1 {
+            margin-bottom: 10px;
             font-size: 32px;
             margin: 0;
         }
         .temperature {
+            margin-top: 10px;
+            margin-bottom: 10px;
             font-size: 92px;
             margin: 0;
+            line-height: 67.68px;
+            letter-spacing: 0.36px;
         }
-        .details, .uv {
-            font-size: 20px;
+
+        .weather-info .details {
             margin-top: 10px;
+            font-size: 19.34px;
+            font-weight: 500;
+            line-height: 23.2px;
+            letter-spacing: 0.37px;
+            color: rgba(235, 235, 245, 0.60);
         }
+
+        .weather-info .uv {
+            font-size: 19.34px;
+            font-weight: 500;
+            line-height: 23.2px;
+            letter-spacing: 0.37px;
+            color: white;
+        }
+        
         .feedback-box {
             position: absolute;
             top: 695px;
@@ -44,10 +67,12 @@
             height: 66px;
             padding: 7px 8px;
             overflow-y: scroll;
-            background: rgba(255, 255, 255, 0.1);
+            background: linear-gradient(136deg, rgba(46, 51, 90, 0.26) 0%, rgba(28, 27, 51, 0.26) 100%);
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25) inset;
             border-radius: 10px;
             color: white;
             font-size: 13px;
+            line-height: 16px;
         }
     </style>
 </head>
@@ -55,7 +80,7 @@
     <div class="container">
         <div class="weather-info">
             <h1>Eindhoven</h1>
-            <div class="temperature">15°</div>
+            <div class="temperature">14°</div>
             <div class="details">Clouds</div>
             <div class="uv">UV Index: 0</div>
         </div>
