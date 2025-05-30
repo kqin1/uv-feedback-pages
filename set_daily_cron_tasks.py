@@ -18,9 +18,9 @@ scripts = {
 # 每天 22:33 运行三个脚本
 for comment, path in scripts.items():
     job = cron.new(command=f'python3 "{path}"', comment=comment)
-    job.setall("33 22 * * *")
+    job.setall("55 07 * * *")
 
 # 写入任务
 cron.write()
 
-print("✅ 每天 22:33 的定时任务已设置完成！")
+print("✅ 每天 07:55 的定时任务已设置完成！")
