@@ -2,7 +2,7 @@ import requests
 import os
 import subprocess
 from datetime import datetime
-print("⚠️ 脚本开始运行...")
+
 # ✅ 替换成你自己的 OpenWeather API 密钥
 API_KEY = "9d770d00e9cb32e8bf84fcd9cb6b39fd"  # ← 别忘了填入！
 url = f"https://api.openweathermap.org/data/3.0/onecall?lat=51.4416&lon=5.4697&exclude=minutely,hourly,daily,alerts&units=metric&appid={API_KEY}"
@@ -12,6 +12,13 @@ data = response.json()
 temp = round(data["current"]["temp"])
 uvi = round(data["current"]["uvi"], 1)
 weather_main = data["current"]["weather"][0]["main"]
+
+# ✅ 打印天气信息（在拿到数据之后）
+timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+print(f"🕒 脚本运行时间: {timestamp}")
+print("🌡️ 温度:", temp)
+print("🌞 UV Index:", uvi)
+print("🌥️ 天气状态:", weather_main)
 
 # ✅ HTML 模板 + 实时天气数据
 html_template = f"""<!DOCTYPE html>
