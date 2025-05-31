@@ -1,6 +1,7 @@
 import requests
 import os
 import subprocess
+from datetime import datetime
 print("⚠️ 脚本开始运行...")
 # 获取天气数据
 API_KEY = "9d770d00e9cb32e8bf84fcd9cb6b39fd"
