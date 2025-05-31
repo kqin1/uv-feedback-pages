@@ -2,7 +2,7 @@ import requests
 import os
 import subprocess
 from datetime import datetime
-
+print("⚠️ 脚本开始运行...")
 # ✅ 替换成你自己的 OpenWeather API 密钥
 API_KEY = "9d770d00e9cb32e8bf84fcd9cb6b39fd"  # ← 别忘了填入！
 url = f"https://api.openweathermap.org/data/3.0/onecall?lat=51.4416&lon=5.4697&exclude=minutely,hourly,daily,alerts&units=metric&appid={API_KEY}"
