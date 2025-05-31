@@ -101,7 +101,7 @@ html_template = f"""<!DOCTYPE html>
             <div class="uv">UV Index: {uvi}</div>
         </div>
         <div class="feedback-box">
-            A new patient of mine went surfing during break without sunscreen on scalp and came back with brittle, less elastic hair and scalp issues. With summer coming, more people doing outdoor sports are applying sunscreen to thinning areas, wearing caps or using UV-protective shampoo. If your scalp feels dry, reddish, or tight after sun exposure, that’s an early sign worth paying attention to.
+            Studies show that UV rays can still damage wet hair on rainy or cloudy days—especially in high-pH water—and students who surf or cycle in such conditions have reported hair loss and scalp flaking (Tatsuda et al., 1987). Some of our active outdoor patients consistently apply and reapply waterproof UV spray and have successfully reduced scalp irritation and hair shedding. Even when protection feels unnecessary, keeping this habit builds long-term defense—your hair acts as a UV shield, and you’ll notice the difference over time!
         </div>
     </div>
 </body>
@@ -109,7 +109,7 @@ html_template = f"""<!DOCTYPE html>
 """
 
 # 保存 HTML 文件
-output_path = "/Users/kqin/Downloads/uv-feedback-pages/professional_day1_doctor_feedback_live3.html"
+output_path = "/Users/kqin/Downloads/uv-feedback-pages/professional_day1_doctor_feedback_live4.html"
 with open(output_path, "w", encoding="utf-8") as f:
     f.write(html_template)
 
@@ -125,8 +125,13 @@ try:
     print("✅ GitHub 同步成功！")
 except subprocess.CalledProcessError:
     print("❌ GitHub 推送失败，请检查网络或凭证")
-    print("温度:", temp)
-    print("UV:", uvi)
-    print("天气:", weather_main)
+    print("温度2P:", temp)
+    print("UV2P:", uvi)
+    print("天气2P:", weather_main)
+    from datetime import datetime
+timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+# 替换 feedback 内容中加入时间，或作为注释
+html_template += f"\n<!-- Last updated: {timestamp} -->\n"
 
 

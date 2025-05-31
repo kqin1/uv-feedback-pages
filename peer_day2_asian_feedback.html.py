@@ -2,41 +2,43 @@ import requests
 import os
 import subprocess
 print("⚠️ 脚本开始运行...")
-# 获取天气数据
-API_KEY = "9d770d00e9cb32e8bf84fcd9cb6b39fd"
+
+# ✅ 替换为你的 OpenWeather API 密钥
+API_KEY = "9d770d00e9cb32e8bf84fcd9cb6b39fd"  # ← 填上你的 key
 url = f"https://api.openweathermap.org/data/3.0/onecall?lat=51.4416&lon=5.4697&exclude=minutely,hourly,daily,alerts&units=metric&appid={API_KEY}"
+
 response = requests.get(url)
 data = response.json()
 temp = round(data["current"]["temp"])
 uvi = round(data["current"]["uvi"], 1)
 weather_main = data["current"]["weather"][0]["main"]
 
-# 创建 HTML 内容（不要有 ...）
 html_template = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <style>
-            @font-face {{
+        @font-face {{
             font-family: 'SF Pro Display';
             src: local('SF Pro Display'), local('SFProDisplay-Regular'), sans-serif;
         }}
-        
+
         body {{
             margin: 0;
             font-family: 'SF Pro Display', sans-serif;
             background: #1C1B33;
         }}
-        
+
         .container {{
             position: relative;
             width: 377px;
             height: 816px;
             margin: 0 auto;
-            background-image: url("https://kqin1.github.io/uv-feedback-pages/doctor_bg4.png");
+            background-image: url("https://kqin1.github.io/uv-feedback-pages/Asian (2).png");
             background-size: cover;
             background-repeat: no-repeat;
         }}
+
         .weather-info {{
             position: absolute;
             top: 95px;
@@ -44,12 +46,14 @@ html_template = f"""<!DOCTYPE html>
             text-align: center;
             color: white;
         }}
+
         .weather-info h1 {{
             margin-bottom: 10px;
             font-size: 32px;
             margin: 0;
         }}
-        .temperature {{
+
+        .weather-info .temperature {{
             margin-top: 10px;
             margin-bottom: 10px;
             font-size: 92px;
@@ -74,7 +78,7 @@ html_template = f"""<!DOCTYPE html>
             letter-spacing: 0.37px;
             color: white;
         }}
-        
+
         .feedback-box {{
             position: absolute;
             top: 695px;
@@ -101,32 +105,36 @@ html_template = f"""<!DOCTYPE html>
             <div class="uv">UV Index: {uvi}</div>
         </div>
         <div class="feedback-box">
-            A new patient of mine went surfing during break without sunscreen on scalp and came back with brittle, less elastic hair and scalp issues. With summer coming, more people doing outdoor sports are applying sunscreen to thinning areas, wearing caps or using UV-protective shampoo. If your scalp feels dry, reddish, or tight after sun exposure, that’s an early sign worth paying attention to.
+            My brother is an active outdoor person who just turned 23, and he recently noticed some hair thinning on the top of his head. After learning in a university lecture that acid rain is common in low-lying areas like the Netherlands, Denmark, and Belgium, he started wearing caps and using waterproof UV spray, which really helped with flaking and irritation. He says if he’d known earlier, he would’ve acted sooner—and now that he’s tried it, he realizes it’s not a hassle at all and hopes others can learn from it too.
         </div>
     </div>
 </body>
-</html>
-"""
+</html>"""
 
-# 保存 HTML 文件
-output_path = "/Users/kqin/Downloads/uv-feedback-pages/professional_day1_doctor_feedback_live3.html"
+# ✅ 保存 HTML 文件
+output_path = "/Users/kqin/Downloads/uv-feedback-pages/peer_day1_asian_feedback_live4.html"
+
 with open(output_path, "w", encoding="utf-8") as f:
     f.write(html_template)
 
-print("✅ Doctor HTML 文件已成功保存！路径：", output_path)
+print("✅ Asian HTML 文件已成功保存！路径：", output_path)
 
-# 推送到 GitHub
+# ✅ 自动推送到 GitHub
 print("🚀 开始同步到 GitHub...")
 os.chdir("/Users/kqin/Downloads/uv-feedback-pages")
 try:
     subprocess.run(["git", "add", "."], check=True)
-    subprocess.run(["git", "commit", "-m", "✅ 修复 doctor 页面空白"], check=True)
+    subprocess.run(["git", "commit", "-m", "✅ 修复 Asian 页面空白"], check=True)
     subprocess.run(["git", "push", "origin", "main"], check=True)
     print("✅ GitHub 同步成功！")
 except subprocess.CalledProcessError:
     print("❌ GitHub 推送失败，请检查网络或凭证")
-    print("温度:", temp)
-    print("UV:", uvi)
-    print("天气:", weather_main)
+    print("温度2A:", temp)
+    print("UV2A:", uvi)
+    print("天气2A:", weather_main)
+    from datetime import datetime
+timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
+# 替换 feedback 内容中加入时间，或作为注释
+html_template += f"\n<!-- Last updated: {timestamp} -->\n"
 
