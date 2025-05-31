@@ -12,6 +12,13 @@ temp = round(data["current"]["temp"])
 uvi = round(data["current"]["uvi"], 1)
 weather_main = data["current"]["weather"][0]["main"]
 
+# ✅ 打印天气信息（在拿到数据之后）
+timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+print(f"🕒 脚本运行时间: {timestamp}")
+print("🌡️ 温度:", temp)
+print("🌞 UV Index:", uvi)
+print("🌥️ 天气状态:", weather_main)
+
 # 创建 HTML 内容（不要有 ...）
 html_template = f"""<!DOCTYPE html>
 <html lang="en">
@@ -125,13 +132,18 @@ print("天气2P:", weather_main)
 
 # 推送到 GitHub
 print("🚀 开始同步到 GitHub...")
+# Git 提交和推送部分
 os.chdir("/Users/kqin/Downloads/uv-feedback-pages")
-try:
-    subprocess.run(["git", "add", "."], check=True)
-    subprocess.run(["git", "commit", "-m", "✅ 修复 doctor 页面空白"], check=True)
+
+# 先 add
+subprocess.run(["git", "add", "."], check=True)
+
+# 再 commit（并捕捉返回码）
+commit_result = subprocess.run(["git", "commit", "-m", "✅ 修复 Dutch 页面空白"])
+if commit_result.returncode == 0:
     subprocess.run(["git", "push", "origin", "main"], check=True)
     print("✅ GitHub 同步成功！")
-except subprocess.CalledProcessError:
-    print("❌ GitHub 推送失败，请检查网络或凭证")
+else:
+    print("⚠️ 没有内容变更，无需提交！")
 
 
