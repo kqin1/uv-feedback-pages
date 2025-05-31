@@ -116,6 +116,20 @@ with open(output_path, "w", encoding="utf-8") as f:
 
 print("✅ Doctor HTML 文件已成功保存！路径：", output_path)
 
+# 添加更新时间
+timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+html_template += f"\n<!-- Last updated: {timestamp} -->\n"
+
+# 保存 HTML 文件
+output_path = "/Users/kqin/Downloads/uv-feedback-pages/professional_day1_doctor_feedback_live4.html"
+with open(output_path, "w", encoding="utf-8") as f:
+    f.write(html_template)
+
+print("✅ Doctor HTML 文件已成功保存！路径：", output_path)
+print("温度2P:", temp)
+print("UV2P:", uvi)
+print("天气2P:", weather_main)
+
 # 推送到 GitHub
 print("🚀 开始同步到 GitHub...")
 os.chdir("/Users/kqin/Downloads/uv-feedback-pages")
@@ -126,13 +140,5 @@ try:
     print("✅ GitHub 同步成功！")
 except subprocess.CalledProcessError:
     print("❌ GitHub 推送失败，请检查网络或凭证")
-    print("温度2P:", temp)
-    print("UV2P:", uvi)
-    print("天气2P:", weather_main)
-    from datetime import datetime
-timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-
-# 替换 feedback 内容中加入时间，或作为注释
-html_template += f"\n<!-- Last updated: {timestamp} -->\n"
 
 
