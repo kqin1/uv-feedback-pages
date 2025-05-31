@@ -109,13 +109,6 @@ html_template = f"""<!DOCTYPE html>
 </html>
 """
 
-# 保存 HTML 文件
-output_path = "/Users/kqin/Downloads/uv-feedback-pages/professional_day1_doctor_feedback_live4.html"
-with open(output_path, "w", encoding="utf-8") as f:
-    f.write(html_template)
-
-print("✅ Doctor HTML 文件已成功保存！路径：", output_path)
-
 # 添加更新时间
 timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 html_template += f"\n<!-- Last updated: {timestamp} -->\n"
