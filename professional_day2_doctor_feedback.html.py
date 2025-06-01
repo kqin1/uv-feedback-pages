@@ -43,7 +43,7 @@ html_template = f"""<!DOCTYPE html>
             height: 816px;
             height: 100%;
             margin: 0 auto;
-            background-image: url("https://kqin1.github.io/uv-feedback-pages/doctor_bg4.png");
+            background-image: url("https://kqin1.github.io/uv-feedback-pages/doctor_bg4.png?v=2");
             background-size: cover;
             background-repeat: no-repeat;
         }}
@@ -87,10 +87,10 @@ html_template = f"""<!DOCTYPE html>
         
         .feedback-box {{
             position: absolute;
-            top: 695px;
+            top: 85vh;
             left: 10px;
-            width: 342px;
-            height: 66px;
+            width: 90%;
+            height: auto;
             padding: 7px 8px;
             overflow-y: scroll;
             background: linear-gradient(136deg, rgba(46, 51, 90, 0.26) 0%, rgba(28, 27, 51, 0.26) 100%);
