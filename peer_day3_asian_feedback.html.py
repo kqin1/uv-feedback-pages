@@ -146,7 +146,16 @@ commit_result = subprocess.run(["git", "commit", "-m", "✅ 修复 Asian 页面�
 if commit_result.returncode == 0:
     subprocess.run(["git", "push", "origin", "main"], check=True)
     print("✅ GitHub 同步成功！")
+
+    # ✅ 自动生成唯一版本参数（避免缓存）
+    version = datetime.now().strftime("%Y%m%d%H%M")  # e.g., 202506012308
+    final_url = f"https://kqin1.github.io/uv-feedback-pages/peer_day3_asian_feedback_live5.html?v={version}"
+
+    print("🔗 请使用以下链接查看最新内容（防止缓存）:")
+    print(final_url)
 else:
     print("⚠️ 没有内容变更，无需提交！")
+
+    
 
 
