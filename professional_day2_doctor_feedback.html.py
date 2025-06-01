@@ -24,7 +24,7 @@ html_template = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="height=device-height, initial-scale=1.0">
     <style>
             @font-face {{
             font-family: 'SF Pro Display';
@@ -40,8 +40,8 @@ html_template = f"""<!DOCTYPE html>
         .container {{
             position: relative;
             width: 377px;
-            width: 100%;
             height: 816px;
+            height: 100%;
             margin: 0 auto;
             background-image: url("https://kqin1.github.io/uv-feedback-pages/doctor_bg4.png");
             background-size: cover;
