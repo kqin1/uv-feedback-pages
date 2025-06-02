@@ -10,9 +10,9 @@ cron.remove_all(comment='peer_asian_feedback')
 
 # 设置三个 .py 脚本的路径（❗不是 .html）
 scripts = {
-    "update_weather_html": "/Users/kqin/Downloads/uv-feedback-pages/professional_day2_doctor_feedback.html.py",
-    "peer_dutch_feedback": "/Users/kqin/Downloads/uv-feedback-pages/peer_day2_dutch_feedback.html.py",
-    "peer_asian_feedback": "/Users/kqin/Downloads/uv-feedback-pages/peer_day2_asian_feedback.html.py"
+    "update_weather_html": "/Users/kqin/Downloads/uv-feedback-pages/professional_day3_doctor_feedback.html.py",
+    "peer_dutch_feedback": "/Users/kqin/Downloads/uv-feedback-pages/peer_day3_dutch_feedback.html.py",
+    "peer_asian_feedback": "/Users/kqin/Downloads/uv-feedback-pages/peer_day3_asian_feedback.html.py"
 }
 
 # 每天 07:55 运行三个脚本
