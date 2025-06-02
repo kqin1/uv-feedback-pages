@@ -149,7 +149,7 @@ if commit_result.returncode == 0:
 
     # ✅ 自动生成唯一版本参数（避免缓存）
     version = datetime.now().strftime("%Y%m%d%H%M")  # e.g., 202506012308
-    final_url = f"https://kqin1.github.io/uv-feedback-pages/peer_day3_asian_feedback_live.html?v={version}"
+    final_url = f"https://kqin1.github.io/uv-feedback-pages/peer_day4_asian_feedback_live.html?v={version}"
 
     print("🔗 请使用以下链接查看最新内容（防止缓存）:")
     print(final_url)
