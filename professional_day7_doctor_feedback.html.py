@@ -42,7 +42,7 @@ html_template = f"""<!DOCTYPE html>
             width: 377px;
             height: 816px;
             margin: 0 auto;
-            background-image: url("https://kqin1.github.io/uv-feedback-pages/Doctor3.png");
+            background-image: url("https://kqin1.github.io/uv-feedback-pages/Doctor7.png");
             background-size: cover;
             background-repeat: no-repeat;
         }}
