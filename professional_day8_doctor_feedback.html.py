@@ -26,17 +26,17 @@ html_template = f"""<!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
     <style>
-            @font-face {{
+        @font-face {{
             font-family: 'SF Pro Display';
             src: local('SF Pro Display'), local('SFProDisplay-Regular'), sans-serif;
         }}
-        
+
         body {{
             margin: 0;
             font-family: 'SF Pro Display', sans-serif;
             background: #1C1B33;
         }}
-        
+
         .container {{
             position: relative;
             width: 377px;
@@ -46,6 +46,7 @@ html_template = f"""<!DOCTYPE html>
             background-size: cover;
             background-repeat: no-repeat;
         }}
+
         .weather-info {{
             position: absolute;
             top: 95px;
@@ -53,11 +54,13 @@ html_template = f"""<!DOCTYPE html>
             text-align: center;
             color: white;
         }}
+
         .weather-info h1 {{
             margin-bottom: 10px;
             font-size: 32px;
             margin: 0;
         }}
+
         .temperature {{
             margin-top: 10px;
             margin-bottom: 10px;
@@ -83,7 +86,7 @@ html_template = f"""<!DOCTYPE html>
             letter-spacing: 0.37px;
             color: white;
         }}
-        
+
         .feedback-box {{
             position: absolute;
             top: 695px;
@@ -110,24 +113,22 @@ html_template = f"""<!DOCTYPE html>
             <div class="uv">UV Index: {uvi}</div>
         </div>
         <div class="feedback-box">
-            Hey students, according to DutchNews.nl, the Netherlands has one of the highest skin cancer rates in Europe (80% of NMSC happens on the head). Thus, your scalp and hair need protection too!
+            Hey students, according to <em>DutchNews.nl</em>, the Netherlands has one of the highest skin cancer rates in Europe
+            (80% of NMSC happens on the head). Thus, your scalp and hair need protection too!<br><br>
 
-            Based on my recent lab studies, even 3 hours of strong UV can start damaging hair, leading to fading, dryness, brittleness, and hair loss over time.
+            Based on my recent lab studies, even 3 hours of strong UV can start damaging hair,
+            leading to fading, dryness, brittleness, and hair loss over time.<br><br>
 
-            Here are a few things you can do:
+            <strong>Here are a few things you can do:</strong><br>
+            1. Change your hair part regularly to avoid repeated sun exposure in the same spot.<br>
+            2. Wear a wide-brim UPF50+ hat or headwrap, stay in the shade, or use a UV umbrella when outdoors between 10 a.m. and 4 p.m.<br>
+            3. If your scalp gets sunburned, cool it with a damp towel and wash with a gentle, sulfate-free, amino acid–based shampoo made from natural ingredients.<br>
+            4. Include more vitamin C & E–rich foods like kiwis and nuts in your diet.<br><br>
 
-            1.Change your hair part regularly to avoid repeated sun exposure in the same spot.
-
-            2.Wear a wide-brim UPF50+ hat or headwrap, stay in the shade, or use a UV umbrella when outdoors between 10 a.m. and 4 p.m.
-
-            3.If your scalp gets sunburned, cool it with a damp towel and wash with a gentle, sulfate-free, amino acid–based shampoo made from natural ingredients.
-
-            4.Include more vitamin C & E–rich foods like kiwis and nuts in your diet.
-
-            If you notice redness, irritation, or rough spots, please get it checked. Most skin cancers start small and are easily treatable if caught early.
+            If you notice redness, irritation, or rough spots, please get it checked.
+            Most skin cancers start small and are easily treatable if caught early.<br><br>
 
             Let’s all take care and wish you a healthy summer!
-
         </div>
     </div>
 </body>
