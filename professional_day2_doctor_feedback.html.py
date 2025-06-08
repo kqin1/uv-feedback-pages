@@ -109,7 +109,7 @@ html_template = f"""<!DOCTYPE html>
             <div class="uv">UV Index: {uvi}</div>
         </div>
         <div class="feedback-box">
-            Studies show that UV rays can still damage wet hair on rainy or cloudy days—especially in high-pH water—and students who surf or cycle in such conditions have reported hair loss and scalp flaking (Tatsuda et al., 1987). Some of our active outdoor patients consistently apply and reapply waterproof UV spray and have successfully reduced scalp irritation and hair shedding. Even when protection feels unnecessary, keeping this habit builds long-term defense—your hair acts as a UV shield, and you’ll notice the difference over time!
+            Studies show that UV rays can still damage wet hair on rainy or cloudy days—especially in high-pH water—and students who surf or cycle in such conditions have reported hair loss and scalp flaking (Bocheva, G., 2023). Some of our active outdoor patients consistently apply and reapply waterproof UV spray and have successfully reduced scalp irritation and hair shedding. Even when protection feels unnecessary, keeping this habit builds long-term defense—your hair acts as a UV shield, and you’ll notice the difference over time! 
         </div>
     </div>
 </body>
